@@ -1,19 +1,18 @@
 ######################
 
-### pump.io http://pump.io Docker image - listens in port 80, 22
+### pump.io http://pump.io Docker image - listens in port 443
 
 1) Install docker
 
-2) clone  https://github.com/niktrix/docker-pump.io
+2) Clone the repos
+	git clone  https://github.com/adundovi/docker-pump.io
 
-3) go inside folder pump.io
+3) Go inside folder pump.io
 
-4) configure pump.io.json as per your needs
+4) Copy pump.io.json.sample to pump.io.json and configure pump.io.json according the needs
 
-5) build docker using
-docker builder .
-    // take care of context, of supervisord and pump.io.json
+5) Build the docker image using
+	docker builder -t adundovi/pump.io .
 
 6)run docker
-
- docker run -p 22 -p 80:80 -t -v database:/data/db:rw  -v uploads:/var/local/pump.io/uploads:rw <Image Id>
+	docker run --name pumpio -p 7775:443 -t adundovi/pump.io
