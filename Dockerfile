@@ -17,6 +17,7 @@ RUN npm install -g databank-mongodb
 RUN npm install -g pump.io
 RUN adduser -D -g "" pumpio
 
+# edit pump.io.json before
 ADD pump.io.json /etc/
 
 # if SSL is enabled (should be!)
